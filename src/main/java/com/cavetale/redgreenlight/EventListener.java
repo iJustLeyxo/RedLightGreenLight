@@ -268,8 +268,8 @@ public final class EventListener implements Listener {
                 plugin.tag.totalCooldown = 100 + plugin.random.nextInt(40) - plugin.random.nextInt(40);
                 plugin.tag.cooldown = plugin.tag.totalCooldown;
                 Title title = title(Light.RED.toComponent(),
-                                    text("Stop Moving", DARK_RED),
-                                    times(Duration.ZERO, Duration.ofSeconds(1), Duration.ZERO));
+                                    text("Stand still!", RED),
+                                    times(Duration.ZERO, Duration.ofMillis(plugin.tag.totalCooldown * 50), Duration.ZERO));
                 for (Player player : players) {
                     player.showTitle(title);
                     player.playSound(player.getLocation(), Sound.ENTITY_GHAST_SCREAM, SoundCategory.MASTER, 0.5f, 2.0f);
