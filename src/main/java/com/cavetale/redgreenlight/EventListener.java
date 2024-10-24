@@ -256,7 +256,11 @@ public final class EventListener implements Listener {
                 plugin.tag.light = Light.YELLOW;
                 plugin.tag.totalCooldown = 30;
                 plugin.tag.cooldown = plugin.tag.totalCooldown;
+                Title title = title(Light.YELLOW.toComponent(),
+                        text("Stop moving!", YELLOW),
+                        times(Duration.ZERO, Duration.ofMillis(1500), Duration.ZERO));
                 for (Player player : players) {
+                    player.showTitle(title);
                     player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, SoundCategory.MASTER, 0.5f, 0.5f);
                 }
             } else if (plugin.tag.light == Light.YELLOW) {
